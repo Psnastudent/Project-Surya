@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#2a1a0e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Forehead Games</title>
+<link rel="stylesheet" href="style.css">
+</head><body>
+<div id="menu">
+ <h1>Forehead Games</h1>
+ <button class="pill" id="me">✏️ name</button>
+ <div class="row" id="tabs"><button class="pill on" data-g="ttt">Tic Tac Toe</button><button class="pill" data-g="car">Carrom</button><button class="pill" data-g="lud">Ludo</button></div>
+ <div class="row" id="lp" style="display:none">Ludo players: <button class="pill on" data-n="2">2</button><button class="pill" data-n="3">3</button><button class="pill" data-n="4">4</button></div>
+ <div id="modes"></div>
+ <div id="onl" style="display:none">
+  <div class="row"><input type="text" id="code" placeholder="Room code" maxlength="8" autocapitalize="off"><button class="pill" id="make">Create room</button><button class="pill" id="join">Join</button></div>
+  <div id="qrbox"><div id="qrcode"></div><div class="mut">Scan with a phone camera, or type this code</div><div id="bigcode"></div><div>Waiting for a friend: <b id="tmr">5:00</b></div></div>
+  <div id="net"></div>
+  <button class="go" id="startb" style="display:none">Start game</button>
+ </div>
+ <div class="rules" id="rules"></div>
+</div>
+
+<div id="game">
+ <div id="top"><span id="ping"></span><div class="mid"><div id="st"></div><div id="sc"></div></div><button id="x" aria-label="Close">✕</button></div>
+ <div id="area"><div id="stage"></div><canvas id="cv"></canvas></div>
+ <div id="bar"><div id="carctl"><span>Striker</span><input type="range" id="sl" min="90" max="310" value="200"></div><button class="go" id="rb">🎲 Roll</button><button class="go alt" id="reset">New game</button></div>
+</div>
+
+<div class="ov" id="nm" style="display:none"><div class="box"><h2>What's your name?</h2><input type="text" id="nin" maxlength="14" placeholder="Your name"><br><br><button class="go" id="nok">Start playing</button></div></div>
+<div class="ov" id="win" style="display:none"><div class="box"><div style="font-size:2.6rem">🎉🏆🎉</div><h2 id="wn"></h2><div id="ws" class="mut" style="margin-bottom:14px"></div><button class="go" id="wag">Play again</button> <button class="pill" id="wcl">Close</button></div></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/peerjs@1.5.4/dist/peerjs.min.js"></script>
+<script src="app.js"></script>
+</body></html>
